@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build C++ (Multiple cpp files)",
+            "type": "shell",
+            "command": "x86_64-w64-mingw32-g++",
+			"args": [ //"-m32",
+					 //"x86_64-w64-mingw32-g++",
+                    "-g",   "main.cpp",//"${fileBasename}", 
+                    "-o",   "\"${workspaceFolder}\\build\\main",
+                    "-I",   "C:\\DEV2\\LIB\\ImGui\\examples",
+                    "-I",   "C:\\DEV2\\LIB\\ImGui\\backends",
+                    "-I",   "C:\\DEV2\\LIB\\ImGui",
+                    "-I",   "C:\\DEV2\\LIB\\ImGui\\examples\\libs\\glfw\\include",
+                    "-I",   "C:\\DEV2\\LIB\\ImGui\\examples\\libs\\gl3w\\",
+                    "-L",   "C:\\DEV2\\LIB\\ImGui\\examples\\libs\\glfw\\lib-vc2010-64",
+                    "-l",   "glfw3",
+                    "-l",   "opengl32",
+                    "-l",   "shell32"
+
+
+                    ], 
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$gcc"
+        }
+    ]
+}
