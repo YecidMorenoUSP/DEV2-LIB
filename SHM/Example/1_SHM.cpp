@@ -1,3 +1,18 @@
+/*
+    1_SHM.cpp para propositos generales
+    
+    #define DEBUG_SHM -> Para mostras los logs en la consola
+
+    By Yecid Moreno : 2021
+    git: https://github.com/YecidMorenoUSP
+
+    Baseado de:
+        Microsoft -> https://docs.microsoft.com/en-us/windows/win32/memory/creating-named-shared-memory
+
+    Requerimientos:
+        1. [V] Crear memoria compartida Windows
+        2. [X] Crear memoria compartida Linux
+*/
 
 #define DEBUG_SHM
 #include "../utilsSHM.h"
