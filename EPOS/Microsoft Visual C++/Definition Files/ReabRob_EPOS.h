@@ -30,11 +30,12 @@ class CAN_Network{
             this->protocolStackName = protocolStackName;
             this->interfaceName = interfaceName;
             this->portName = portName;
-            this->nodeId = 1;
+            this->nodeId = 32;
             mtx.unlock();
         }
         bool connect(){
             this->epos = VCS_OpenDevice(deviceName,protocolStackName,interfaceName,portName,&errorCode);
+            VCS_ClearFault(this->epos,32,&errorCode);
             return(this->epos>0);
         }
         void setNodeId(WORD id){
@@ -86,6 +87,7 @@ class CAN_Network{
         bool configure(WORD id){
             mtx.lock();
             resetErrors();
+             VCS_ClearFault(epos,id,&errorCode);
              if(VCS_SetProtocolStackSettings(epos,1000000,50,&errorCode)>0)
              if(VCS_ActivateVelocityMode(epos,id,&errorCode))
              if(VCS_SetMaxProfileVelocity(epos,id,1000,&errorCode)){

@@ -72,7 +72,7 @@ void SerialPort::closePort()
 int SerialPort::readSerialPort(char *buffer, unsigned int buf_size)
 {
     DWORD bytesRead;
-//    unsigned int toRead;
+    //    unsigned int toRead;
     unsigned int toRead=0;
 
     ClearCommError(this->handler, &this->errors, &this->status);
